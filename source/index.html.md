@@ -26,7 +26,7 @@ meta:
 
 # Introduction
 
-Welcome to IQPro Documentation built using slate. Here Business can find and use this tool for thier operations.
+Welcome to BASYS IQPro Documentation built using slate. Here Business can find and use this tool for thier operations.
 
 We have language bindings in Shell, Ruby, Python, JavaScript and Csharp! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
 
