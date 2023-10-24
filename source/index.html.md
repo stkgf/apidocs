@@ -6,9 +6,10 @@ language_tabs: # must be one of https://github.com/rouge-ruby/rouge/wiki/List-of
   - ruby
   - python
   - javascript
+  - csharp
 
 toc_footers:
-  - <a href='#'>Sign Up for a Developer Key</a>
+  - <a href='#'>This is a IQPro documentation site</a>
   - <a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a>
 
 includes:
@@ -25,9 +26,9 @@ meta:
 
 # Introduction
 
-Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
+Welcome to IQPro Documentation built using slate. Here Business can find and use this tool for thier operations.
 
-We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
+We have language bindings in Shell, Ruby, Python, JavaScript and Csharp! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
 
 This example API documentation page was created with [Slate](https://github.com/slatedocs/slate). Feel free to edit it and use it as a base for your own API's documentation.
 
@@ -59,21 +60,23 @@ const kittn = require('kittn');
 let api = kittn.authorize('meowmeowmeow');
 ```
 
-> Make sure to replace `meowmeowmeow` with your API key.
+> 
+IQPro uses tokens to validate and to process a request.
+Make sure to replace `meowmeowmeow` with your API key.
 
 Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
 
 Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
 
-`Authorization: meowmeowmeow`
+`Authorization: Tokenex`
 
 <aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
+You must replace <code>tokenex</code> with your new Tokenex key for every 45minutes.
 </aside>
 
-# Kittens
+# Customer
 
-## Get All Kittens
+## Get Customer
 
 ```ruby
 require 'kittn'
@@ -104,22 +107,82 @@ let kittens = api.kittens.get();
 > The above command returns JSON structured like this:
 
 ```json
-[
-  {
-    "id": 1,
-    "name": "Fluffums",
-    "breed": "calico",
-    "fluffiness": 6,
-    "cuteness": 7
+{
+  "statusCode": "Continue",
+  "statusDetails": [
+    "string"
+  ],
+  "data": {
+    "name": "string",
+    "description": "string",
+    "createdDateTime": "2023-10-23T20:05:51.848Z",
+    "modifiedDateTime": "2023-10-23T20:05:51.848Z",
+    "sourceReferenceId": "string",
+    "addresses": [
+      {
+        "isPhysical": true,
+        "isShipping": true,
+        "isBilling": true,
+        "firstName": "string",
+        "lastName": "string",
+        "company": "string",
+        "email": "string",
+        "phone": "string",
+        "fax": "string",
+        "addressLine1": "string",
+        "addressLine2": "string",
+        "city": "string",
+        "state": "string",
+        "postalCode": "string",
+        "country": "string",
+        "sourceReferenceId": "string",
+        "customerAddressId": "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+      }
+    ],
+    "paymentMethods": [
+      {
+        "ach": {
+          "achId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+          "maskedAccount": "string",
+          "accountType": "Checking",
+          "secCode": "PPD",
+          "token": "string",
+          "sourceReferenceId": "string"
+        },
+        "card": {
+          "cardId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+          "maskedCard": "string",
+          "token": "string",
+          "cardType": "Visa",
+          "expirationDate": "string",
+          "sourceReferenceId": "string"
+        },
+        "isDefault": true,
+        "paymentMethodId": "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+      }
+    ],
+    "customFieldEntries": [
+      {
+        "customFieldId": 0,
+        "name": "string",
+        "value": "string",
+        "modifiedByUserId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+        "modifiedDateTime": "2023-10-23T20:05:51.849Z",
+        "type": "string",
+        "customFieldCategoryName": "string",
+        "customFieldCategoryId": 0,
+        "dataType": "string"
+      }
+    ],
+    "statistics": {
+      "addressesCount": 0,
+      "paymentMethodsCount": 0
+    },
+    "customerId": "3fa85f64-5717-4562-b3fc-2c963f66afa6"
   },
-  {
-    "id": 2,
-    "name": "Max",
-    "breed": "unknown",
-    "fluffiness": 5,
-    "cuteness": 10
-  }
-]
+  "byteData": "string",
+  "contentType": "string"
+}
 ```
 
 This endpoint retrieves all kittens.
