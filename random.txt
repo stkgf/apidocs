@@ -3671,13 +3671,13 @@ a.post__card:hover .icon.bottom {
 }
 
 html #popup-overlay {
-    -webkit-backdrop-filter: blur(100px);
-    backdrop-filter        : blur(100px);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter        : blur(10px);
     background             : #00176a33;
     content                : "";
     position               : absolute;
     top                    : 0;
-    z-index                : 1000
+    z-index                : 100
 }
 
 html #popup-overlay,
@@ -3689,7 +3689,6 @@ html #search-popup {
 
 html #search-popup {
     align-items    : center;
-    align-items    : right;
     display        : flex;
     justify-content: center;
     position       : fixed;
